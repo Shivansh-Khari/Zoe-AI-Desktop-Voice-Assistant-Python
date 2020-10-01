@@ -1,5 +1,7 @@
 # Zoe-AI-Desktop-Voice-Commanding-Assistant-Python
 
+![alt](https://github.com/anujdube12/Zoe-AI-Desktop-Voice-Assistant-Python/blob/master/zoe.jpg)
+
 #An Amazing Project
 This Is A Desktop Voice Assistant Made On VS Code With Python And Python Modules. 
 Zoe Is Capable Of Opening Websites, Sending Emails, Playing Music, Stoping Music, Opening Applications ,Talking To The User and Turn OFF herself. 
