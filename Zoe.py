@@ -4,7 +4,8 @@ import datetime
 import wikipedia #pip install wikipedia     #pip install pyaudio
 import webbrowser
 import os
-import smtplib 
+import smtplib
+from pygame import mixer
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
@@ -112,11 +113,16 @@ if __name__ == "__main__":
             webbrowser.open(website)
 
         elif 'play music' in query:
-            music_dir = 'D:\\Non Critical\\songs\\Favorite Songs2'
-            songs = os.listdir(music_dir)
-            print(songs)    
-            os.startfile(os.path.join(music_dir, songs[0]))
-
+            speak('Playing Music ')
+            music_dir = 'full_path_of_song'
+            mixer.init()
+            mixer.music.load(music_dir)
+            mixer.music.play()
+        
+        #stop music   
+        elif 'stop music' in query:
+            mixer.music.stop()
+            
         elif 'the time' in query:
             strTime = datetime.datetime.now().strftime("%H:%M:%S")
             print(strTime)    
@@ -140,3 +146,7 @@ if __name__ == "__main__":
                 print(e) 
                 speak("Sorry Sir, I Am Not Able To Send Email")
                 print("Sorry Sir, I Am Not Able To Send Email")
+                
+        elif 'turn off' in query:
+                speak('Good Bye Master')
+                break
